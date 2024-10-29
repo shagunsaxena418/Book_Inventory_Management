@@ -32,11 +32,6 @@ app.post('/books', async (req, res) => {
         [title, author, genre, publication_date, isbn]
       );
       res.status(201).json({ message: "Book added successfully!", bookId: result.insertId });
-      document.getElementById("title").value = '';
-            document.getElementById("author").value = '';
-            document.getElementById("genre").value = '';
-            document.getElementById("publication-date").value = '';
-            document.getElementById("isbn").value = '';
     } catch (error) {
       console.error("Error adding book:", error);
       res.status(500).json({ message: "Failed to add book. Please try again." });
